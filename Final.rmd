@@ -136,6 +136,48 @@ LGBTQ individuals in the placebo group were over four times more likely to becom
 
 
 ## Druggies
+Hypotheses
+
+H₀: Infection rates are identical for drug users receiving vaccine vs placebo.
+H₁: Infection rates differ between vaccinated and placebo drug users.
+
+
+
+```{r}
+drug_users <- FinalData %>% filter(DrugUser == "yes")
+
+table_drugs <- table(drug_users$treatment, drug_users$infected)
+table_drugs
+
+fisher.test(table_drugs)
+
+
+
+```
+Results for Drug Users
+
+The  dataset includes 3,060 drug users, split between vaccine and placebo. Their infection results were:
+
+Placebo group: 5 infected, 1,530 not infected
+
+Vaccine group: 55 infected, 1,470 not infected
+
+Unlike the other subgroups, here the vaccine group shows more infections than the placebo group.
+
+A Fisher’s Exact Test was used due to small infection counts.
+
+
+The p-value is extremely small, so we reject the null hypothesis of equal infection rates between groups.
+
+The odds ratio 0.087 is less than 1, meaning:
+
+Vaccinated drug users were more likely to become infected than placebo drug users.
+
+This suggests a reverse effect in this subgroup.
+
+
+
+
 
 
 # Overall Results and Conclusions
