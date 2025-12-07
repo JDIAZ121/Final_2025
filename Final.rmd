@@ -181,3 +181,29 @@ This suggests a reverse effect in this subgroup.
 
 
 # Overall Results and Conclusions
+
+
+Overall We evaluated the covid921 vaccine across four key subgroups using formal hypothesis testing with Fisher’s Exact Test. The outcome variable was infection status (infected: "covid19" vs "OK").
+
+Interpretation of Effects
+
+In males, females, and LGBTQ individuals, the vaccine dramatically reduces infection rates.
+
+The strength of the effect is largest in the LGBTQ subgroup, where placebo participants were over 4x more likely to become infected.
+
+However, drug users showed the opposite pattern, where vaccinated individuals were more likely to become infected than placebo users.
+
+
+Males: Strongly recommended to take the vaccine.
+
+Females: Strongly recommended to take the vaccine.
+
+LGBTQ individuals: Very strong evidence of benefit — recommended to take the vaccine.
+
+Drug users: Do NOT recommend vaccination with covid921 for this subgroup, as data shows significantly higher infection rates among vaccinated drug users.
+
+Overall, the covid921 vaccine is effective in the general population and in key subgroups (males, females, and LGBTQ individuals).
+However, its performance appears to be subgroup-dependent, with drug users experiencing significantly worse outcomes when vaccinated.
+
+These results highlight the importance of subgroup analysis in clinical trials and suggest that covid921 may require additional investigation, modification, or contraindications for drug-using populations.
+
