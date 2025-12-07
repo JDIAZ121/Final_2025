@@ -65,6 +65,39 @@ The odds ratio of 2.82 indicates that placebo males were nearly three times more
 
 ## Females
 
+Hypotheses
+
+H₀: Infection rates are the same for vaccine and placebo among females.
+H₁: Infection rates differ between vaccine and placebo among females.
+
+
+```{r}
+females <- FinalData %>% filter(sex == "F")
+
+table_females <- table(females$treatment, females$infected)
+table_females
+
+fisher.test(table_females)
+
+
+
+```
+
+Results for Females
+
+The female subgroup includes 18,328 participants divided between placebo and vaccine. Their infection counts were:
+
+Placebo group: 237 infected, 8,970 not infected
+
+Vaccine group: 128 infected, 8,993 not infected
+
+As with males, infection events are relatively rare, so a Fisher’s Exact Test is the appropriate statistical test.
+
+Since the p-value is far below 0.05, we reject the null hypothesis that infection rates are equal for the vaccinated and placebo female groups.
+
+The odds ratio of 1.86 indicates that placebo females were nearly twice as likely to become infected compared to vaccinated females.
+
+
 
 ## LGBTQ
 
