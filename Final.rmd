@@ -20,11 +20,47 @@ FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
 ```
 
+
+
+
 # Introduction
 
 A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
 ## Males
+
+H₀: Infection rates are the same for vaccine and placebo among males.
+H₁: Infection rates differ between vaccine and placebo among males.
+
+```{r}
+males <- FinalData %>% filter(sex == "M")
+
+table_males <- table(males$treatment, males$infected)
+table_males
+
+# statistical test
+
+fisher.test(table_males)
+
+
+
+```
+Results for Males
+
+The contingency table for male participants shows:
+
+Placebo group: 262 infected, 9,021 not infected
+
+Vaccine group: 93 infected, 9,016 not infected
+
+Because infection counts are relatively small compared to the total group size (18,392 males), a Fisher’s Exact Test was used.
+
+Since the p-value is far below 0.05, we reject the null hypothesis that infection rates are the same for vaccinated and placebo males.
+
+The odds ratio of 2.82 indicates that placebo males were nearly three times more likely to become infected compared to vaccinated males
+
+
+
 
 
 ## Females
