@@ -100,6 +100,38 @@ The odds ratio of 1.86 indicates that placebo females were nearly twice as likel
 
 
 ## LGBTQ
+Hypotheses
+
+H₀: Infection rates are equal for vaccinated vs. placebo LGBTQ individuals.
+H₁: Infection rates are different for LGBTQ individuals.
+
+```{r}
+
+lgbtq <- FinalData %>% filter(LGBTQ == "gay")
+
+table_lgbtq <- table(lgbtq$treatment, lgbtq$infected)
+table_lgbtq
+
+fisher.test(table_lgbtq)
+
+
+```
+The  dataset includes 3,060 LGBTQ (“gay”) participants, divided across vaccine and placebo groups. Their infection counts were:
+
+Placebo group: 48 infected, 1,450 not infected
+
+Vaccine group: 12 infected, 1,550 not infected
+
+Because infection events are relatively rare in this subgroup, a Fisher’s Exact Test was used.
+
+
+The p-value is far below 0.05, so we reject the null hypothesis that infection rates are the same between treatment groups for LGBTQ participants.
+
+The odds ratio of 4.27 means:
+
+LGBTQ individuals in the placebo group were over four times more likely to become infected compared to those receiving the vaccine.
+
+
 
 
 
